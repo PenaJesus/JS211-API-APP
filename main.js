@@ -2,8 +2,8 @@ let api = 'https://api.openbrewerydb.org/breweries?by_city=';
 let city = 'Dallas'
 
 
-fetchData = () => {
-  let url = api + city;
+fetchData = (inputVal) => {
+  let url = api + inputVal;
   fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -50,7 +50,10 @@ fetchData = () => {
     })
 }
 
-fetchData();
+// fetchData();
 
-
+const submit = () => {
+  let input = document.getElementById('city').value
+  fetchData(input)
+}
 
