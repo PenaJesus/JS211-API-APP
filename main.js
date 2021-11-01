@@ -1,6 +1,9 @@
-let url = 'https://api.openbrewerydb.org/breweries?by_city=austin';
+let api = 'https://api.openbrewerydb.org/breweries?by_city=';
+let city = 'Dallas'
+
 
 fetchData = () => {
+  let url = api + city;
   fetch(url)
     .then(response => {
       if (!response.ok) {
